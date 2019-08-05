@@ -9,8 +9,9 @@
   },
   "rules": {
     "ordered-imports": false,
-    "jsx-no-lambda": false
-//    "member-access": false,
-//    "no-console": false
+    "jsx-no-lambda": false,
+    "member-access": false,
+    "no-string-literal": false,
+    "no-console": false
   }
 }
