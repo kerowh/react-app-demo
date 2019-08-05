@@ -1,0 +1,26 @@
+{
+  "name": "tudo-demo",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@types/react-router-dom": "^4.3.4",
+    "antd": "^3.21.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.1",
+    "react-scripts-ts-antd": "2.17.0"
+  },
+  "scripts": {
+    "start": "react-scripts-ts-antd start",
+    "build": "react-scripts-ts-antd build",
+    "test": "react-scripts-ts-antd test --env=jsdom",
+    "eject": "react-scripts-ts-antd eject"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.16",
+    "@types/node": "^12.6.9",
+    "@types/react": "^16.8.24",
+    "@types/react-dom": "^16.8.5",
+    "typescript": "^3.5.3"
+  }
+}
