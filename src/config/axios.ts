@@ -1,5 +1,5 @@
 import axios from 'axios';
-// import history from './history'
+import history from './history'
 
 const appID = "yLG8dfNvwBVFr3td6wHCSUix"
 const appSecret = "WembHPWGgcq8V9Swpv3Y7RZp"
@@ -36,8 +36,7 @@ instance.interceptors.response.use((response) => {
 	// 获取不到用户的信息了
 	if(error.response.status === 401){
 		console.log("重定向");
-		window.location.href='/login'
-		// history.push('/login')
+		history.push('/login')
 	}
 	// Do something with response error
 	return Promise.reject(error);
