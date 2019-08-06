@@ -20,12 +20,10 @@ class SignUp extends React.Component<any,ILoginState> {
         }
     }
 
-    onChangeAccount = (e) => {
-        this.setState({ account: e.target.value });
-    }
-
-    onChangePassword = (e) => {
-        this.setState({ password: e.target.value });
+    onChange = (key,value)=>{
+        const newState={}
+        newState[key]=value
+        this.setState(newState)
     }
 
 
@@ -36,8 +34,7 @@ class SignUp extends React.Component<any,ILoginState> {
                 account, // account: account
                 password,
             })
-            // this.props.history.push('/')
-            console.log('成功');
+             this.props.history.push('/')
         }catch(e){
             throw new Error(e)
         }
@@ -52,9 +49,9 @@ class SignUp extends React.Component<any,ILoginState> {
                     placeholder="请输入你的用户名"
                     prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
                     value={account}
-                    onChange={this.onChangeAccount}
+                    onChange={(e)=>{this.onChange('account',e.target.value)}}
                 />
-                <Input.Password value={password} placeholder="请输入密码" onChange={this.onChangePassword}/>
+                <Input.Password value={password} placeholder="请输入密码" onChange={(e)=>{this.onChange('password',e.target.value)}}/>
                 <Button type="primary" className="loginButton" onClick={this.submit}>登陆</Button>
                 <p>如果你没有账号，请立即<Link to="/signUp">注册</Link></p>
             </div>
