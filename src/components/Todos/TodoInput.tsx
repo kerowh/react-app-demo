@@ -9,13 +9,11 @@ interface ITodoInputState {
 }
 
 // addtodo是props中的函数，要使用他最好定义一个接口
-// interface ITodoInputProps {
-//     addTodo: (prams:any) => any;
-// }
+interface ITodoInputProps {
+    addTodo: (prams:any) => void;
+}
 
-
-
-class TodoInput extends React.Component<any,ITodoInputState> {
+class TodoInput extends React.Component<ITodoInputProps,ITodoInputState> {
     constructor(props){
         super(props)
         this.state = {
