@@ -1,5 +1,8 @@
 import * as React from 'react';
 import {Checkbox,Icon} from "antd";
+import classNames from 'classnames';
+
+import './TodoItem.scss'
 
 interface ITodoItemProps {
     id: number;
@@ -56,10 +59,16 @@ class TodoItem extends React.Component<ITodoItemProps,ITodoItemState> {
             </div>
         )
 
-        const Text = <span onDoubleClick={this.toEditing}>{this.props.description}</span>
-
+        const Text = <span className="text" onDoubleClick={this.toEditing}>{this.props.description}</span>
+        // 使用了这个组件就可以定义editing变化状态的scss
+        const todoItemClass =classNames({
+            TodoItem: true,
+            editing: this.props.editing,
+            // tslint:disable-next-line:object-literal-sort-keys
+            completed: this.props.completed
+        })
         return (
-            <div className="TodoItem" id="TodoItem">
+            <div className={todoItemClass} id="TodoItem">
                 <Checkbox checked={this.props.completed}
                           onChange={e=> this.update({completed: e.target.checked})}
                 />
