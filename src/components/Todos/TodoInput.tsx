@@ -1,14 +1,13 @@
 import * as React from 'react';
 import {Input,Icon} from "antd";
 import { connect } from 'react-redux';
-import {addTodo} from "../../redux/reducers/action";
+import {addTodo} from "../../redux/action";
 import axios from 'src/config/axios'
 
 interface ITodoInputState {
     description: string;
 }
 
-// addtodo是props中的函数，要使用他最好定义一个接口
 interface ITodoInputProps {
     addTodo: (payload:any) => any;
 }
@@ -22,8 +21,8 @@ class TodoInput extends React.Component<ITodoInputProps,ITodoInputState> {
         console.log(this.props)
     }
 
-    onKeyUp = (e)=>{
-        if (e.keyCode === 13 && this.state.description !== ''){
+    onKeyUp = (e) => {
+        if(e.keyCode === 13 && this.state.description !== ''){
             this.postTodo()
         }
     }
@@ -35,8 +34,10 @@ class TodoInput extends React.Component<ITodoInputProps,ITodoInputState> {
         }catch (e) {
             throw new Error(e)
         }
-        // this.setState({description:''})
+        this.setState({description: ''})
     }
+
+
 
     public render() {
         const { description } = this.state;
@@ -55,12 +56,18 @@ class TodoInput extends React.Component<ITodoInputProps,ITodoInputState> {
     }
 }
 
-    const mapStateToProps = (state, ownProps) => ({
-        ...ownProps
-    })
 
-    const mapDispatchToProps = {
-        addTodo
-    }
+
+const mapStateToProps = (state, ownProps) => ({
+    ...ownProps
+})
+
+
+
+const mapDispatchToProps = {
+    addTodo
+}
+
+
 
 export default connect(mapStateToProps,mapDispatchToProps)(TodoInput);
