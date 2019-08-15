@@ -1,6 +1,7 @@
 import {format} from "date-fns";
 import * as React from 'react';
 import { connect } from 'react-redux';
+import TodoHistory from 'src/components/Statistics/TodoHistory'
 import _ from 'lodash'
 import Polygon from 'src/components/Statistics/Polygon'
 import "./Statistics.scss"
@@ -18,10 +19,9 @@ class Statistics extends React.Component<IStatisticsProps> {
 
 
     get dailyTodos(){
-        const obj = _.groupBy(this.finishedTodos,(todo)=>{
+        return  _.groupBy(this.finishedTodos,(todo)=>{
             return format(todo.updated_at,'YYYY-MM-D')
         })
-        return obj
     }
 
     public render() {
@@ -36,6 +36,7 @@ class Statistics extends React.Component<IStatisticsProps> {
                         <Polygon data={this.dailyTodos} totalFinishCount={this.finishedTodos.length}/>
                         </li>
                 </ul>
+                <TodoHistory/>
             </div>
         );
     }
