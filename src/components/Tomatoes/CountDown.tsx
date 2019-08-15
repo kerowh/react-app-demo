@@ -31,9 +31,9 @@ class CountDown extends React.Component<ICountDown,ICountDownState>{
 
     componentDidMount(): void {
         timerId = setInterval(()=>{
-            document.title = `${this.countDown}-番茄APP`
             const time = this.state.countDown
             this.setState({countDown:time-1000})
+            document.title = `${this.countDown}-番茄APP`
             if (time< 1000){
                 // 告诉父组件完成倒计时
                 document.title = "番茄APP"
