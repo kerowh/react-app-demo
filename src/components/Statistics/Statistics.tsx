@@ -1,7 +1,7 @@
 import {format} from "date-fns";
 import * as React from 'react';
 import { connect } from 'react-redux';
-import TodoHistory from 'src/components/Statistics/TodoHistory'
+import TodoHistory from 'src/components/Statistics/TodoHistory/TodoHistory'
 import _ from 'lodash'
 import Polygon from 'src/components/Statistics/Polygon'
 import "./Statistics.scss"
