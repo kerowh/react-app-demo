@@ -3,7 +3,7 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import TodoHistory from 'src/components/Statistics/TodoHistory/TodoHistory'
 import _ from 'lodash'
-import Polygon from 'src/components/Statistics/Polygon'
+// import Polygon from 'src/components/Statistics/Polygon'
 import "./Statistics.scss"
 
 
@@ -27,15 +27,15 @@ class Statistics extends React.Component<IStatisticsProps> {
     public render() {
         return (
             <div className="Statistics" id="Statistics">
-                <ul>
-                    <li>统计</li>
-                    <li>目标</li>
-                    <li>番茄历史</li>
-                    <li>任务历史
-                        累计完成{this.finishedTodos.length}个任务
-                        <Polygon data={this.dailyTodos} totalFinishCount={this.finishedTodos.length}/>
-                        </li>
-                </ul>
+                {/*<ul>*/}
+                {/*    <li>统计</li>*/}
+                {/*    <li>目标</li>*/}
+                {/*    <li>番茄历史</li>*/}
+                {/*    <li>任务历史*/}
+                {/*        累计完成{this.finishedTodos.length}个任务*/}
+                {/*        <Polygon data={this.dailyTodos} totalFinishCount={this.finishedTodos.length}/>*/}
+                {/*        </li>*/}
+                {/*</ul>*/}
                 <TodoHistory/>
             </div>
         );

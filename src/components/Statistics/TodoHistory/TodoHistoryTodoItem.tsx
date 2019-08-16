@@ -57,9 +57,7 @@ class TodoHistoryTodoItem  extends React.Component<ITodoHistoryTodoItemProps> {
                     <span className="time">{format(time,formatText)}</span>
                     <span className="description">{this.props.todo.description}</span>
                 </div>
-                <div className="action">
                     {action}
-                </div>
             </div>
 
         );

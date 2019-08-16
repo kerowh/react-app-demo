@@ -1,6 +1,7 @@
 {
   "name": "tudo-demo",
   "version": "0.1.0",
+  "homepage": "https://kerowh.github.io/react-app-demo",
   "private": true,
   "dependencies": {
     "@types/react-router-dom": "^4.3.4",
@@ -8,6 +9,7 @@
     "axios": "^0.19.0",
     "classnames": "^2.2.6",
     "date-fns": "^1.30.1",
+    "gh-pages": "^2.1.1",
     "lodash": "^4.17.15",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -17,6 +19,8 @@
     "redux": "^4.0.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts-ts-antd start",
     "build": "react-scripts-ts-antd build",
     "test": "react-scripts-ts-antd test --env=jsdom",
